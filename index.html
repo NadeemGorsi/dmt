@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Migration Tool by NdmGjr</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .main {
+            height: 100vh;
+            display: flex;
+        }
+        .main-inner {
+            width: 50vw;
+            margin: auto;
+            padding: 40px;
+            background: silver;
+            border-radius: 4px;
+            box-shadow: 0 8px 6px -6px gray;
+        }
+        input[type=text] {
+            width: 100%;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 3px #ddd;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        input[type=submit] {
+            background-color: royalblue;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .help {
+            margin-top: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+        .help span {
+            font-weight: bold;
+            padding: 5px;
+            color: royalblue;
+            border: 2px solid royalblue;
+            border-radius: 4px;
+        }
+        .help span:hover {
+            background: royalblue;
+            color: white;
+        }
+        .help:hover .help-up {
+            display: block;
+        }
+        .help-up {
+            display: none;
+            margin-top: 15px;
+            position: absolute;
+            width: 100%;
+            padding: 15px;
+            color: white;
+            border: 1px solid white;
+            background: royalblue;
+            border-radius: 4px;
+            box-shadow: inset 0 0 10px white;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="main-inner">
+            <h1>Data Migration Tool by Ndm Gjr</h1>
+            <form action="./dmt.php" method="POST">
+                <input type="text" name="new_db_name" id="new_db_name" placeholder="New Database Name" required>
+                <input type="text" name="old_db_name" id="old_db_name" placeholder="Old Database Name" required>
+                <input type="text" name="category_of_data" id="category_of_data" placeholder="Category Name for the Records being moved" required>
+                <input type="submit" name="submit">
+            </form>
+            <div class="help">
+                <span>HELP?</span>
+                <div class="help-up">
+                    <p>This tool can be used to transfer data from one database to another...
+                        this one is designed for special table structure, where we need to transfer records from email, and user coulmns
+                        and we create new column `category` to recognize the records in combined database.
+                    </p><br>
+                    <p>Modifications can be done to this tool according to needs.</p>
+                </div>
+
+
+            </div>
+            
+        </div>
+    </div>
+   
+</body>
+</html>
